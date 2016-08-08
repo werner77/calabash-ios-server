@@ -261,7 +261,7 @@
   }
 
   // Guard against invalid access when asking for encoding[0]
-  if (!encoding.length >= 1) {
+  if (encoding.length < 1) {
     LPLogError(@"Selector '%@' on '%@' has an invalid encoding; '%@' must have at least one character.",
                NSStringFromSelector(selector), target, encoding);
     return [LPInvocationError hasUnknownReturnTypeEncoding];
